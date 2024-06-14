@@ -1,7 +1,7 @@
 /**
  * This is an interface that  makes inheritance of the methods for JpaREPOSITORY
  * Which permits CRUD to be done on BankAccount
- *
+ * findByIban: method to find accounts with the IBAN
  *
  */
 
@@ -15,6 +15,6 @@ import org.springframework.data.jpa.repository.JpaRepository
 interface BankAccountRepository: JpaRepository <BankAccount, Long> {
 
 
-    //NEEDS WORKS HERE
+    fun findByIban (iban: String): BankAccount?
 
 }

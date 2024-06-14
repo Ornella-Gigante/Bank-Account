@@ -26,21 +26,29 @@ class ApiController(
     @PostMapping ("/bank-accounts/ {accountId}/deposit")
     fun deposit (@PathVariable accountId: Long, @RequestParam amount: Double){
 
-        //Call the service to make a deposit
+        bankAccountService.deposit(accountId, amount)
 
     }
 
     @PostMapping ("/bank-accounts/{accountId}/withdraw")
     fun withdraw (@PathVariable accountId:Long, @RequestParam amount: Double){
 
-        //Call the service to do the withdraw
+        bankAccountService.withdraw(accountId, amount)
 
     }
 
-    //HABRIA QUE PONER ESTADOS DE CUENTA , ETC
-    //REVISAR
-    //ETC
+    @PostMapping ("/{accountId}/transfer")
+    fun transfer (@PathVariable fromAccountId:Long, @RequestParam toAccountIban:String, @RequestParam amount: Double){
 
+        bankAccountService.transfer(fromAccountId, toAccountIban, amount)
+    }
+
+    @GetMapping ("/{accountId}/statement")
+    fun getAccountStatement (@PathVariable accountId: Long): List <Transaction>{
+
+        return bankAccountService.getAccountStatement(accountId)
+
+    }
 
 }
 
