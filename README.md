@@ -1,5 +1,5 @@
 # Bank-Account
-This is a Tech Challengue in which I'm working on with server gradle-kotlin-springboot
+This is a Tech Challengue given by Code Sherpas in which I'm working on with server gradle-kotlin-springboot 
 
 
 # Tech challenge
